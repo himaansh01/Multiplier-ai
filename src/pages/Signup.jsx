@@ -25,7 +25,7 @@ export const Signup = () => {
                             onClick={async () => {
                                 const response = await axios.post("http://localhost:3000/signup", { email, username, password });
                                 localStorage.setItem("token", response.data.token);
-                                navigate("/dashboard");
+                                navigate("/dashboard", { replace: true });; // Prevents going back
                             }}
                             label="Sign up"
                         />
